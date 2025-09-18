@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="11ab77be1d7f4d0e9982100527e5be10" Name="Diagram1">
+        <EntityTypeShape EntityType="BamboDBModel.Address" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BamboDBModel.Brand" Width="1.5" PointX="9.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="BamboDBModel.Category" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BamboDBModel.Customer" Width="1.5" PointX="5.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BamboDBModel.CustomerRole" Width="1.5" PointX="12" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BamboDBModel.Discount" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BamboDBModel.OderDitals" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BamboDBModel.Order" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BamboDBModel.Product" Width="1.5" PointX="12" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BamboDBModel.ProductOrder" Width="1.5" PointX="7.5" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="BamboDBModel.Productwhish" Width="1.5" PointX="12" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BamboDBModel.Review" Width="1.5" PointX="5.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BamboDBModel.Role" Width="1.5" PointX="9.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BamboDBModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BamboDBModel.Transaction" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BamboDBModel.WishList" Width="1.5" PointX="9.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="BamboDBModel.Tbl_Admin" Width="1.5" PointX="15" PointY="3.375" IsExpanded="true" />
+        <AssociationConnector Association="BamboDBModel.FK_Admin_Address" ManuallyRouted="false" />
+        <AssociationConnector Association="BamboDBModel.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="BamboDBModel.FK_CustomerRole_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="BamboDBModel.FK_Discount_OderDitals" ManuallyRouted="false" />
+        <AssociationConnector Association="BamboDBModel.FK_Order_OderDitals" ManuallyRouted="false" />
+        <AssociationConnector Association="BamboDBModel.FK_Transaction_OderDitals" ManuallyRouted="false" />
+        <AssociationConnector Association="BamboDBModel.FK_Order_Transaction" ManuallyRouted="false" />
+        <AssociationConnector Association="BamboDBModel.FK_ProductOrder_Order" ManuallyRouted="false" />
+        <AssociationConnector Association="BamboDBModel.FK_Productwhish_WishList" ManuallyRouted="false" />
+        <AssociationConnector Association="BamboDBModel.FK_Admin_Role" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

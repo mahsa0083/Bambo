@@ -1,0 +1,180 @@
+﻿@model Bambo.Areas.Admin.Data.AdminViewModel
+@{
+    ViewBag.Title = "AdminProfile";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="conatiner-fluid content-inner mt-n5 py-0">
+    <div>
+        <div class="row">
+            <div class="col-xl-3 col-lg-4">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">Add New User</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <div class="profile-img-edit position-relative">
+                                @{
+                                    if (Model.Admin.Image != null)
+                                    {
+
+
+                                        var base64Image = Convert.ToBase64String(Model.Admin.Image);
+                                        var imageSrc = $"data:image/png;base64,{base64Image}";
+                                        <img src="@imageSrc" class="avatar avatar-large rounded-circle shadow d-block mx-auto" alt="Profile Image" />
+
+                                    }
+                                    else
+                                    {
+                                        <img src="@Url.Content("~/Areas/Admin/assets/images/avatars/01.png")" alt="profile-pic" class="theme-color-default-img profile-pic rounded avatar-100">
+                                    }
+                                }
+
+                                <div class="upload-icone bg-primary">
+                                    <svg class="upload-button icon-14" width="14" viewBox="0 0 24 24">
+                                        <path fill="#ffffff" d="M14.06,9L15,9.94L5.92,19H5V18.08L14.06,9M17.66,3C17.41,3 17.15,3.1 16.96,3.29L15.13,5.12L18.88,8.87L20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18.17,3.09 17.92,3 17.66,3M14.06,6.19L3,17.25V21H6.75L17.81,9.94L14.06,6.19Z" />
+                                    </svg>
+                                    <input class="file-upload" type="file" accept="image/*">
+                                </div>
+                            </div>
+                            <div class="img-extension mt-3">
+                                <div class="d-inline-block align-items-center">
+                                    <span>Only</span>
+                                    <a href="javascript:void();">.jpg</a>
+                                    <a href="javascript:void();">.png</a>
+                                    <a href="javascript:void();">.jpeg</a>
+                                    <span>allowed</span>
+                                </div>
+                            </div>
+                        </div>
+                        @using (Html.BeginForm("ViewProfile", "Admin", FormMethod.Post))
+                        {
+
+
+
+                            <div class="form-group">
+                                <label class="form-label">User Role:</label>
+                                @{
+                                    if (Model.Admin.RoleFk != 0)
+                                    { <select name="type" class="selectpicker form-control" name="Admin.Role.RoleName" data-style="py-0">
+                                            @{
+                                                foreach (var i in Model.Roles)
+                                                {
+                                                    <option>@i.RoleName</option>
+
+                                                }
+                                            }
+                                        </select>
+
+                                    }
+                                }
+
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="furl">Facebook Url:</label>
+                                <input type="text" class="form-control" id="furl" placeholder="Facebook Url">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="turl">Twitter Url:</label>
+                                <input type="text" class="form-control" id="turl" placeholder="Twitter Url">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="instaurl">Instagram Url:</label>
+                                <input type="text" class="form-control" id="instaurl" placeholder="Instagram Url">
+                            </div>
+                            <div class="form-group mb-0">
+                                <label class="form-label" for="lurl">Linkedin Url:</label>
+                                <input type="text" class="form-control" id="lurl" placeholder="Linkedin Url">
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-8">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">New User Information</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="new-user-info">
+                            @using(Html.BeginForm("ViewProfile", "Admin", FormMethod.Post , new { enctype = "multipart/form-data" }))
+                            {
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label" for="fname">First Name:</label>
+                                        <input type="text" class="form-control" id="fname" name="Admin.Firstname" vlaue="@Model.Admin.Firstname" placeholder="First Name">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label" for="lname">Last Name:</label>
+                                        <input type="text" class="form-control" id="lname" name="Admin.Lastname" vlaue="@Model.Admin.Lastname" placeholder="Last Name">
+                                    </div>
+                                    @{
+                                        if (Model.Admin.AddressFk != 0)
+                                        {
+                                            <div class="form-group col-md-6">
+                                                <label class="form-label" for="add1">Street Address 1:</label>
+                                                <input type="text" class="form-control" id="add1" name="Admin.Address.FullAddress" vlaue="@Model.Admin.Address.FullAddress" placeholder="Street Address 1">
+                                            </div>
+
+                                            <div class="form-group col-sm-12">
+                                                <label class="form-label">Country:</label>
+                                                <select name="type" class="selectpicker form-control" name="Admin.Address.City" vlaue="@Model.Admin.Address.City" data-style="py-0">
+                                                    @foreach (var i in Model.addresses)
+                                                    {
+                                                        <option>@i.City</option>
+
+                                                    }
+                                                </select>
+                                            </div>
+                                        }
+                                    }
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label" for="mobno">Mobile Number:</label>
+                                        <input type="text" class="form-control" id="mobno" name="Admin.Phone" vlaue="@Model.Admin.Phone" placeholder="Mobile Number">
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label" for="email">Email:</label>
+                                        <input type="email" class="form-control"  name="Admin.Email" vlaue="@Model.Admin.Email"id="email" placeholder="Email">
+                                    </div>
+                                    
+                                    <div class="form-group mb-0">
+                                        <input type="file" class="form-control" name="Admin.Image"  aria-label="file example" required="">
+                                        <div class="invalid-feedback">Example invalid form file feedback</div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <h5 class="mb-3">Security</h5>
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                        <label class="form-label" for="uname">User Name:</label>
+                                        <input type="text" class="form-control" id="uname"name="Admin.Username" vlaue="@Model.Admin.Password" placeholder="User Name">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label" for="pass">Password:</label>
+                                        <input type="password" class="form-control" id="pass" name="Admin.Password" vlaue="@Model.Admin.Password" placeholder="Password">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label class="form-label" for="rpass">Repeat Password:</label>
+                                        <input type="password" class="form-control" id="rpass" name="Admin.Password" vlaue="@Model.Admin.Password" placeholder="Repeat Password ">
+                                    </div>
+                                </div>
+                                <div class="checkbox">
+                                    <label class="form-label"><input class="form-check-input me-2" type="checkbox" value="" id="flexCheckChecked">Enable Two-Factor-Authentication</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Add New User</button>
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

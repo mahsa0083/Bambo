@@ -1,0 +1,385 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/index.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap-5.3.7-dist/css/bootstrap.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/linea-icons/linea-arrows-10.svg")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/css/product.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/ProductInfo/css/styles.css")">
+  
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+    <style>
+        /* The alert message box */
+        .alert {
+            padding: 20px;
+            background-color: #f44336; /* Red */
+            color: white;
+            margin-bottom: 15px;
+            opacity: 1;
+            transition: opacity 0.6s; /* 600ms to fade out */
+        }
+
+        /* The close button */
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+            /* When moving the mouse over the close button */
+            .closebtn:hover {
+                color: black;
+            }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <div class="header">
+
+            <div class="content_header">
+                <ul class="left_header list-unstyled">
+                    <li class="Regiser">
+                        <button class="btn re_btn" id="btnLogin">ورود/ثبت نام<span class="lnr lnr-user"></span></button>
+                    </li>
+                    <li class="Regiser">
+                        <a role="button" href="#" class="btn re_btn"><span class="lnr lnr-cart"></span></a>
+                    </li>
+                </ul>
+
+
+                <ul class="right_header list-unstyled">
+                    <li class="search">
+                        <input type="search" placeholder="عبارت مورد نظرتان جهت جستجو وارد نمایید">
+                        <span class="lnr lnr-user place"></span>
+                    </li>
+                    <li class="logo">
+                        <img src="@Url.Content("~/Content/images/Logo120248395150.png")">
+                    </li>
+
+
+                    </li>
+                </ul>
+            </div>
+            <div class="second_content ">
+                <ul class="bottom_part list-unstyled">
+                    <li>
+                        <button id="categoryTitle">
+                            آرایشی و بهداشتی
+                            <span class="lnr lnr-highlight"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            مکمل غذایی و کمک درمانی
+                            <span class="lnr lnr-leaf"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            مکمل ورزشی
+                            <span class="lnr lnr-bicycle"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            مادر و کودک
+                            <span class="lnr lnr-users"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            تجهیزات پزشکی
+                            <span class="lnr lnr-heart-pulse"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            مجله داروکده
+                            <span class="lnr lnr-file-add"></span>
+                        </button>
+                    </li>
+
+                </ul>
+            </div>
+            <hr style="margin-top: 0;">
+        </div>
+    </header>
+
+
+    <div class="SubTitle" id="firstpart" style="display: none;">
+        <ul class="subTitleName">
+            <li>
+                <a href="#">مراقبت پوستی</a>
+            </li>
+            <li>
+                <a href="#">مراقبت مو</a>
+            </li>
+            <li>
+                <a href="#">بهداشت و سلامت</a>
+            </li>
+            <li>
+                <a href="#">بهداشت دهان و دندان</a>
+            </li>
+            <li>
+                <a href="#">آرایشی</a>
+            </li>
+            <li>
+                <a href="#">مکمل های خوراکی</a>
+            </li>
+            <li>
+                <a href="#"> رفع دغدغه پوستی</a>
+            </li>
+
+        </ul>
+
+
+    </div>
+
+    <div class="subItem" id="secondpart" style="display: none;">
+        <hr>
+        <ul class="subItemName">
+            <li>
+                <ul class="firstsub">
+                    <li>
+                        <a href="#" class="TitleHeader">ضدآفتاب و محصولات مرتبط <bold>|</bold></a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub">اسپری ضدآفتاب بدن</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub">کرم ضد آفتاب </a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub">ضدآفتاب دور چشم</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub">برنز کننده</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub">ضدآفتاب کودک</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub"> افتر رسان</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <ul class="firstsub">
+                    <li>
+                        <a href="#" class="TitleHeader">ضدآفتاب و محصولات مرتبط <bold>|</bold></a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub">اسپری ضدآفتاب بدن</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub">کرم ضد آفتاب </a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub">ضدآفتاب دور چشم</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub">برنز کننده</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub">ضدآفتاب کودک</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sub"> افتر رسان</a>
+                    </li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+
+    @RenderBody()
+
+
+    <footer class="footer">
+        <div class="footer_Container">
+            <div class="Footer_FirstPart">
+                <ul class="About d-flex">
+                    <li>
+                        <img src="@Url.Content("~/Content/images/FooterLogo.svg")" alt="">
+                    </li>
+                    <li>
+                        <p class="AboutParagragh">
+                            داروکده , اولین و بزرگترین داروخانه آنلاین رسمی کشور و جامع ترین پایگاه فروش اینترنتی و
+                            اطلاع رسانی محصولات داروخانه ای است که در آذر ماه سال 1388 تحت امتیاز و مدیریت داروخانه
+                            مرکزی جمالزاده و با نظارت دکتر داروساز به عنوان مسئول فنی و همچنین تیمی متشکل از داروسازان
+                            متخصص و مجرب در گرایشهای فارماکولوژی، فارماکوگنوزی، کارشناسان ارشد تغذیه و پوست و مو تأسیس
+                            شد.
+                            ساعات پاسخگویی : شنبه تا چهارشنبه از 8 تا 19 / پنجشنبه ها از 8 تا 14.
+                            داروخانه آنلاین داروکده در هیچ کجای کشور شعبه و نمایندگی دیگری ندارد.
+                        </p>
+                    </li>
+                    <li>
+                        <h4> همیشه همراه شما هستیم</h4>
+                        <div class="getAccess">
+                            <div class="getAccess_item d-flex ">
+                                <span class="lnr lnr-phone-handset"></span>
+
+                                <p>0909000909</p>
+                            </div>
+                            <div class="getAccess_item d-flex">
+                                <span class="lnr lnr-phone-handset p-15"></span>
+
+                                <p>0909000909</p>
+                            </div>
+                            <div class="getAccess_item d-flex">
+                                <p>kkjkj@gamil.com</p>
+                                <span class="lnr lnr-email"></span>
+                            </div>
+                        </div>
+                        <div class="address d-flex">
+                            <span class="lnr lnr-location"></span>
+                            <p>
+                                تهران - خیابان جمالزاده شمالی - بالاتر از خیابان فرصت - نبش کوچه یزدان شناس - پلاک 251 -
+                                داروخانه مرکزی جمالزاده
+                            </p>
+
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="Footer_SecondPart">
+
+                <div class="Footer_thirdPart">
+
+                </div>
+            </div>
+
+    </footer>
+
+
+
+    <div class="modal" id="loginModal" style="display: none;">
+        <div class="modal_content">
+            <div class="entermodal">
+                <div class="firstpart">
+                    <p> ورود به داروکده </p> <span class="lnr lnr-cross" id="CloseModal"></span>
+                </div>
+                <hr>
+                <div class="seconfpart">
+                    <div class="logomodal">
+                        <img src="@Url.Content("~/Content/images/Logo120248395150.png")">
+                    </div>
+                </div>
+
+
+                @Html.Partial("_LoginView")
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Modalssssssss -->
+    <!-- end modalsssss -->
+</body>
+
+<script src="@Url.Content("~/Content/ProductInfo/js/cart.js")"></script>
+<script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+
+
+<script>
+    var btnCategory = document.getElementById("categoryTitle");
+    var F_part = document.getElementById("firstpart");
+    var S_part = document.getElementById("secondpart");
+    var timeClose = 1;
+
+
+    btnCategory.addEventListener("mouseenter", function () {
+        F_part.style.display = "flex";
+        timeClos = 1;
+
+
+    })
+    F_part.addEventListener("mouseover", function (a) {
+        if (timeClose == 1) {
+            F_part.style.display = "flex";
+            F_part.style.boxShadow = "-20px 0 5px #4646468c, 2px 0 5px #4646468c";
+            S_part.style.display = "flex";
+
+        }
+
+
+    })
+
+    S_part.addEventListener("mouseleave", function () {
+
+        S_part.style.display = "none";
+
+
+    })
+    btnCategory.addEventListener("click", function () {
+
+        F_part.style.display = "none";
+        S_part.style.display = "none";
+
+
+    })
+
+</script>
+<script>
+    // Get all elements with class="closebtn"
+    var close = document.getElementsByClassName("closebtn");
+    var i;
+
+    // Loop through all close buttons
+    for (i = 0; i < close.length; i++) {
+        // When someone clicks on a close button
+        close[i].onclick = function () {
+
+            // Get the parent of <span class="closebtn"> (<div class="alert">)
+            var div = this.parentElement;
+
+            // Set the opacity of div to 0 (transparent)
+            div.style.opacity = "0";
+
+            // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
+            setTimeout(function () { div.style.display = "none"; }, 600);
+        }
+    }
+</script>
+</html>

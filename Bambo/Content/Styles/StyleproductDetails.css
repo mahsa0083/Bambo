@@ -1,0 +1,253 @@
+body {
+    background-color: #f5f5f5;
+    font-family: 'Vazirmatn', sans-serif;
+    direction: rtl;
+}
+
+/* --- Container and Card Styles --- */
+.product-detail-card, .price-info-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.product-detail-card {
+    background-color: #e8f5e9; /* Light green background */
+}
+
+.price-info-card {
+    background-color: #d4edda; /* Light purple/lilac background */
+}
+
+/* --- 4 and Info Card Styles (Right Side) --- */
+.icon-row .icon-item {
+    width: 30%;
+}
+
+.thumbnail-gallery {
+    gap: 15px;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    overflow: hidden;
+}
+
+.thumbnail.active, .thumbnail:hover {
+    border-color: #4caf50;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- Product Info Styles --- */
+.product-info-wrapper {
+    padding-left: 2rem;
+}
+
+.icon-item .icon-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #e8f5e9;
+    color: #4caf50;
+    font-size: 1.5rem;
+}
+
+.icon-item .icon-text {
+    font-size: 0.8rem;
+    color: #555;
+    margin: 0;
+}
+
+.delivery-list li {
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.delivery-list li i {
+    color: #4caf50;
+    font-size: 1.1rem;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 1.2rem;
+    margin-left: 10px;
+}
+
+.discount-badge {
+    background-color: #e1bee7;
+    color: #6a1b9a;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.final-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.add-to-cart-btn-large {
+    width: 100%;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-to-cart-btn-large:hover {
+    background-color: #388e3c;
+}
+
+/* --- Product Detail Card Styles (Left Side) --- */
+.product-info-wrapper {
+    padding-left: 2rem;
+}
+
+.main-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.sub-title {
+    font-size: 1.1rem;
+    font-weight: normal;
+    color: #888;
+}
+
+.brand-name {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    margin-top: 5px;
+}
+
+.favorite-icon {
+    font-size: 1.5rem;
+    color: #888;
+    cursor: pointer;
+}
+
+.rating-section {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.stars i {
+    color: #ffc107;
+}
+
+.rating-count {
+    font-weight: bold;
+    color: #333;
+    margin-right: 5px;
+}
+
+.comments-link {
+    color: #4caf50;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.delivery-section .fa-truck {
+    color: #4caf50;
+    font-size: 1.2rem;
+}
+
+.option-label {
+    font-weight: bold;
+    color: #333;
+    margin-left: 15px;
+}
+
+.options-group .option-pill {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid #e0e0e0;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-left: 10px;
+}
+
+.options-group .option-pill.active, .options-group .option-pill:hover {
+    background-color: #e8f5e9;
+    border-color: #4caf50;
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.gift-pill {
+    background-color: #e3f2fd;
+    color: #1565c0;
+    border-color: #bbdefb;
+    font-weight: bold;
+}
+
+.about-product-section {
+    line-height: 2;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.product-description-list {
+    list-style: none;
+    padding-right: 0;
+}
+
+.product-description-list li {
+    position: relative;
+    padding-right: 20px;
+    color: #555;
+}
+
+.product-description-list li::before {
+    content: "\2022";
+    color: #4caf50;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    position: absolute;
+    right: 0;
+}
+
+/* --- Responsive adjustments --- */
+@media (max-width: 768px) {
+    .product-detail-card, .price-info-card {
+        padding: 1rem;
+    }
+    .product-info-wrapper {
+        padding-left: 0;
+        margin-top: 2rem;
+    }
+    .order-md-1, .order-md-2 {
+        order: unset;
+    }
+}

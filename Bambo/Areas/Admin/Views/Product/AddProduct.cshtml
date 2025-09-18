@@ -1,0 +1,155 @@
+﻿@model Bambo.Areas.Admin.Data.ProductViewModel
+@{
+    ViewBag.Title = "AddProduct";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="conatiner-fluid content-inner mt-n5 py-0">
+    <div>
+        <div class="row">
+            <div class="col-xl-3 col-lg-4">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        @using (Html.BeginForm("NewProduct", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                        {
+
+                            <div class="form-group">
+                                <div class="profile-img-edit position-relative">
+                                    @*@{if (Model.product.Image != null)
+                                        {
+                                            var base64Image = Convert.ToBase64String(Model.product.Image);
+                                            var imageSrc = $"data:image/png;base64,{base64Image}";
+                                            <img src="@imageSrc" alt="profile-pic" class="theme-color-default-img profile-pic rounded avatar-100">
+                                        }
+                                        else
+                                        {
+                                            <img src="@Url.Content("~/Areas/Admin/assets/images/avatars/01.png")" alt="profile-pic" class="theme-color-default-img profile-pic rounded avatar-100">
+
+                                        }
+                                    }*@
+
+                                    <div class="upload-icone bg-primary">
+                                        <svg class="upload-button icon-14" width="14" viewBox="0 0 24 24">
+                                            <path fill="#ffffff" d="M14.06,9L15,9.94L5.92,19H5V18.08L14.06,9M17.66,3C17.41,3 17.15,3.1 16.96,3.29L15.13,5.12L18.88,8.87L20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18.17,3.09 17.92,3 17.66,3M14.06,6.19L3,17.25V21H6.75L17.81,9.94L14.06,6.19Z" />
+                                        </svg>
+                                        <input class="file-upload" type="file" accept="image/*">
+                                    </div>
+                                </div>
+                                <div class="img-extension mt-3">
+                                    <div class="d-inline-block align-items-center">
+                                        <span>Only</span>
+                                        <a href="javascript:void();">.jpg</a>
+                                        <a href="javascript:void();">.png</a>
+                                        <a href="javascript:void();">.jpeg</a>
+                                        <span>allowed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-8">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between">
+                        <div class="header-title">
+                            <h4 class="card-title">افزودن کالای جدید</h4>
+                        </div>
+                    </div>
+                    @using (Html.BeginForm("NewProduct", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="card-body">
+                            <div class="new-user-info">
+                                <form>
+                                    <div class="row">
+                                        <div class="form-group col-md-6">
+                                            <label class="form-label" for="fname">نام کالا</label>
+                                            <input type="text" class="form-control" id="fname" name="product.ProductName" required>
+                                        </div>
+
+
+                                        <div class="form-group col-md-6">
+                                            <label class="form-label" for="add2">قیمت</label>
+                                            <input type="text" class="form-control" id="add2" name="product.Price" required>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="form-label" for="cname">کد محصول</label>
+                                            <input type="text" class="form-control" id="cname" name="product.ProductCode" required>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="form-label" for="cname">تصویر محصول</label>
+                                            <input type="file" class="form-control form-control-lg" name="ProductImage" aria-label="Large file input example"  required>
+                                        </div>
+                                        <div class="form-group col-sm-6">
+                                            <label class="form-label">دسته بندی</label>
+
+
+                                            <select name="product.CategoryID" class="selectpicker form-control" data-style="py-0" required>
+                                                <option value="">-- انتخاب دسته --</option>
+                                                @foreach (var i in Model.categories)
+                                                {
+                                                    <option value="@i.CategoryID">@i.CategoryName</option>
+                                                }
+                                            </select>
+
+
+
+                                        </div>
+
+                                        <div class="form-group col-sm-6">
+                                            <label class="form-label">برند</label>
+
+                                            <select name="product.BrandID" class="selectpicker form-control" data-style="py-0" required>
+                                                <option value="">-- انتخاب برند --</option>
+                                                @foreach (var i in Model.brands)
+                                                {
+                                                    <option value="@i.BrandID">@i.BrandName</option>
+                                                }
+                                            </select>
+
+
+
+
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label class="form-label" for="lname">توضیحات</label>
+                                            <input type="text" class="form-control" id="lname" name="product.Discription" required>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="form-label" for="email">تاریخ تولید</label>
+                                            <input type="date" class="form-control" id="email" name="product.CreateAt" required>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="form-label" for="pno">تاریخ انقضا</label>
+                                            <input type="date" class="form-control" id="pno" name="product.ExpireAt" required>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="form-label">گارانتی</label>
+                                            <input type="checkbox" class="form-check-input me-2"  name="Granantee" value="true" @(Model.HasGarantee ? "checked" : "") />
+                                            <input type="hidden" class="form-check-input me-2"  name="Granantee" value="false" />
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label class="form-label">موجود در انبار</label>
+                                            <input type="checkbox" name="IsAvaible"   class="form-check-input me-2"  value="true" @(Model.IsAvaible ? "checked" : "") />
+                                            <input type="hidden" name="IsAvaible"  class="form-check-input me-2"  value="false" />
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <button type="submit" class="btn btn-primary">افزودن کالا</button>
+                                </form>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,318 @@
+﻿@model Bambo.Models.ViewModel.UserViewModel
+@{
+    ViewBag.Title = "ShowProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروشگاه مکمل‌های ورزشی</title>
+
+    <link href="@Url.Content("~/Content/Styles/bootstrap-5.3.3-dist/css/bootstrap.min.css")" rel="stylesheet">
+
+    <link rel="stylesheet" href="@Url.Content("~/Content/Styles/font-awesome/css/all.min.css")">
+
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet"
+          type="text/css" />
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        .main-container {
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .filter-panel {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+        }
+
+        .product-main-container {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+        }
+
+        .filter-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .divider {
+            border-bottom: 1px solid #e9ecef;
+            margin: 1rem 0;
+        }
+
+        .group-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            cursor: pointer;
+            color: #212529;
+            font-weight: bold;
+        }
+
+        .brand-item,
+        .type-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+            .brand-item .form-check-input,
+            .type-item .form-check-input {
+                margin-left: 0.5rem;
+            }
+
+        .show-more-link {
+            text-decoration: none;
+            color: #28a745;
+            font-size: 0.9rem;
+        }
+
+        .price-range-slider {
+            width: 100%;
+        }
+
+        .apply-filter-btn {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            font-weight: bold;
+            padding: 10px 15px;
+            border-radius: 8px;
+            width: 100%;
+        }
+
+        .range-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-top: 0.5rem;
+        }
+
+        /* استایل‌های محصول */
+        .product-card {
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            height: auto;
+            padding: 1.5rem;
+            text-align: center;
+            margin-bottom: 1.6rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+            .product-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .product-card img {
+                max-width: 100%;
+                height: 10rem;
+                object-fit: cover;
+            }
+
+        .product-info {
+            padding: 10px 0;
+        }
+
+            .product-info h5 {
+                font-size: 1.1rem;
+                font-weight: bold;
+            }
+
+        .price {
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .rating {
+            color: gold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid main-container">
+        <div class="row">
+
+            <div class="col-lg-3 col-md-4 order-md-1">
+                <div class="filter-panel">
+                    <div class="filter-item">
+                        <div class="form-check form-switch d-flex justify-content-between mb-2">
+                            <label class="form-check-label" for="available">محصولات موجود</label>
+
+                            <input class="form-check-input" type="checkbox" id="available">
+                        </div>
+                        <div class="form-check form-switch d-flex justify-content-between align-items-center mb-2">
+                            <label class="form-check-label" for="discount">محصولات باتخفیف</label>
+                            <input class="form-check-input" type="checkbox" id="discount">
+                        </div>
+                        <div class="form-check form-switch d-flex justify-content-between align-items-center">
+                            <label class="form-check-label" for="gift">محصولات باهدیه</label>
+                            <input class="form-check-input" type="checkbox" id="gift">
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="filter-item">
+                        <h6 class="mb-2">گروه‌ها</h6>
+                        <div class="group-item">
+                            <span>مکمل ورزشی</span>
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="filter-item">
+                        <h6 class="mb-2">برندها</h6>
+                        <div class="brand-item">
+                            <input class="form-check-input" type="checkbox" value="" id="brand1">
+                            <label class="form-check-label" for="brand1">۲۱ سنچری</label>
+                        </div>
+                        <div class="brand-item">
+                            <input class="form-check-input" type="checkbox" value="" id="brand2">
+                            <label class="form-check-label" for="brand2">۶ پاک نوتریشن</label>
+                        </div>
+                        <div class="brand-item">
+                            <input class="form-check-input" type="checkbox" value="" id="brand3">
+                            <label class="form-check-label" for="brand3">ابوریحان</label>
+                        </div>
+                        <div class="brand-item">
+                            <input class="form-check-input" type="checkbox" value="" id="brand4">
+                            <label class="form-check-label" for="brand4">ادوای</label>
+                        </div>
+                        <a href="#" class="show-more-link d-flex align-items-center mt-2">
+                            <span>نمایش بیشتر</span>
+                            <i class="fas fa-chevron-down ms-1" style="font-size: 0.7rem;"></i>
+                        </a>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="filter-item">
+                        <h6 class="mb-2">انواع</h6>
+                        <div class="type-item">
+                            <input class="form-check-input" type="checkbox" value="" id="type1">
+                            <label class="form-check-label" for="type1">پودر</label>
+                        </div>
+                        <div class="type-item">
+                            <input class="form-check-input" type="checkbox" value="" id="type2">
+                            <label class="form-check-label" for="type2">بک</label>
+                        </div>
+                        <div class="type-item">
+                            <input class="form-check-input" type="checkbox" value="" id="type3">
+                            <label class="form-check-label" for="type3">ساشه</label>
+                        </div>
+                        <div class="type-item">
+                            <input class="form-check-input" type="checkbox" value="" id="type4">
+                            <label class="form-check-label" for="type4">ساشه و محلول</label>
+
+                        </div>
+                        <a href="#" class="show-more-link d-flex align-items-center mt-2">
+                            <span>نمایش بیشتر</span>
+                            <i class="fas fa-chevron-down ms-1" style="font-size: 0.7rem;"></i>
+                        </a>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="filter-item">
+                        <h6 class="mb-3">قیمت</h6>
+                        <p class="text-muted mb-2" style="font-size: 0.85rem;">
+                            محدوده قیمت مورد نظر خود را انتخاب کنید
+                        </p>
+                        <div class="range-label">
+                            <span>گران‌ترین</span>
+                            <span>ارزان‌ترین</span>
+                        </div>
+                        <input type="range" class="form-range price-range-slider" id="priceRange" min="0" max="100">
+                        <p class="text-muted text-center mt-2" style="font-size: 0.9rem;">از ۱ تا ۹,۷۸۰,۰۰۰ تومان</p>
+                        <button class="btn apply-filter-btn mt-3">اعمال قیمت</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9 col-md-8 order-md-2">
+                <div class="product-main-container">
+                    <h4 class="text-success">لوازم آرایشی و بهداشتی</h4>
+
+                    <div class="row mx-3 mt-5">
+                        @foreach (var i in Model.products)
+                        {
+                            <div class="col-md-3 mb-4 d-flex">
+                                <!-- هر محصول ۳ ستون از ۱۲ -->
+                                <div class="product-card w-100" id="selected">
+                                    <div style="display:none;" id="selectedID">@i.ProductID</div>
+
+                                    @if (i.Image != null)
+                                    {
+                                        var base64Image = Convert.ToBase64String(i.Image);
+                                        var imageSrc = $"data:image/png;base64,{base64Image}";
+                                        <img src="@imageSrc" alt="@i.ProductName" class="img-fluid">
+                                    }
+                                    else
+                                    {
+                                        <img src="~/Content/Images/no-image.png" alt="@i.ProductName" class="img-fluid">
+                                    }
+
+                                    <div class="product-info">
+                                        <h5>@i.ProductName</h5>
+                                        <p class="price">@i.Price تومان</p>
+                                        <p class="rating">★@i.ProductRate</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="@Url.Content("~/Content/Styles/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js")"></script>
+    <script>
+        $("body").onclick("#selected", function () {
+            var itemid = document.getElementById("selectedID").val();
+            var url = '/Home/ProductInfo?id=' + encodeURIComponent(id);
+
+            // ارسال با Fetch API
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('result').innerHTML =
+                        '<span style="color:' + (data.success ? 'green' : 'red') + ';">' + data.message + '</span>';
+                })
+                .catch(error => {
+                    document.getElementById('result').innerHTML = '<span style="color:red;">خطا در ارسال</span>';
+                    console.error(error);
+                });
+        })
+    </script>
+</body>
+
+
+</html>
