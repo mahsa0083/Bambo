@@ -49,14 +49,14 @@
                                                             var imageSrc = $"data:image/png;base64,{base64Image}";
                                                             <td class="text-center">
                                                                 <img class="bg-soft-primary rounded img-fluid avatar-40 me-3"
-                                                                     src="@imageSrc" alt="profile">
+                                                                     src="@Url.Content("~/Content/@imageSrc") alt="profile">
                                                             </td>
                                                         }
                                                         else
                                                         {
                                                             <td class="text-center">
                                                                 <img class="bg-soft-primary rounded img-fluid avatar-40 me-3"
-                                                                     src="@Url.Content("~/Areas/Admin/assets/images/shapes/01.png")" alt="profile">
+                                                                     src="@Url.Content("~/Areas/Admin/assets/images/shapes/01.png")")" alt="profile">
                                                             </td>
                                                         }
                                                     }

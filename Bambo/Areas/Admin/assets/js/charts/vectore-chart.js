@@ -61,7 +61,7 @@
       
       const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
       const attribution = 
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+      '&copy; <a href="@Url.Content("~/Content/https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
       const tileLayer = L.tileLayer(tileUrl, { attribution });
   
       function getColor(d) {

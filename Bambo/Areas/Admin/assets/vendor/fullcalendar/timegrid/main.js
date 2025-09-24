@@ -153,7 +153,7 @@ Docs & License: https://fullcalendar.io/
             }
             return '<a class="' + classes.join(' ') + '"' +
                 (eventDef.url ?
-                    ' href="' + core.htmlEscape(eventDef.url) + '"' :
+                    ' href="@Url.Content("~/Content/' + core.htmlEscape(eventDef.url) + '"' :
                     '') +
                 (skinCss ?
                     ' style="' + skinCss + '"' :

@@ -1,385 +1,244 @@
-﻿
-
-<!DOCTYPE html>
-<html lang="en" dir="rtl">
-
+﻿<!doctype html>
+<html class="no-js")" lang="zxx">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="@Url.Content("~/Content/css/index.css")">
-    <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap-5.3.7-dist/css/bootstrap.min.css")">
-    <link rel="stylesheet" href="@Url.Content("~/Content/css/linea-icons/linea-arrows-10.svg")">
-    <link rel="stylesheet" href="@Url.Content("~/Content/css/product.css")">
-    <link rel="stylesheet" href="@Url.Content("~/Content/ProductInfo/css/styles.css")">
-  
-    <link rel="shortcut icon" href="favicon.ico">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>eCommerce HTML-5 Template </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="@Url.Content("~/Content/site.webmanifest")">
+    <link rel="shortcut icon" type="image/x-icon" href="@Url.Content("~/Content/assets/img/favicon.ico")">
 
-
-    <style>
-        /* The alert message box */
-        .alert {
-            padding: 20px;
-            background-color: #f44336; /* Red */
-            color: white;
-            margin-bottom: 15px;
-            opacity: 1;
-            transition: opacity 0.6s; /* 600ms to fade out */
-        }
-
-        /* The close button */
-        .closebtn {
-            margin-left: 15px;
-            color: white;
-            font-weight: bold;
-            float: right;
-            font-size: 22px;
-            line-height: 20px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-            /* When moving the mouse over the close button */
-            .closebtn:hover {
-                color: black;
-            }
-    </style>
-
+    <!-- CSS here -->
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/bootstrap.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/owl.carousel.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/flaticon.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/slicknav.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/animate.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/magnific-popup.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/fontawesome-all.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/themify-icons.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/slick.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/nice-select.css")">
+    <link rel="stylesheet" href="@Url.Content("~/Content/assets/css/style.css")">
 </head>
 
 <body>
 
-    <header>
-        <div class="header">
-
-            <div class="content_header">
-                <ul class="left_header list-unstyled">
-                    <li class="Regiser">
-                        <button class="btn re_btn" id="btnLogin">ورود/ثبت نام<span class="lnr lnr-user"></span></button>
-                    </li>
-                    <li class="Regiser">
-                        <a role="button" href="#" class="btn re_btn"><span class="lnr lnr-cart"></span></a>
-                    </li>
-                </ul>
-
-
-                <ul class="right_header list-unstyled">
-                    <li class="search">
-                        <input type="search" placeholder="عبارت مورد نظرتان جهت جستجو وارد نمایید">
-                        <span class="lnr lnr-user place"></span>
-                    </li>
-                    <li class="logo">
-                        <img src="@Url.Content("~/Content/images/Logo120248395150.png")">
-                    </li>
-
-
-                    </li>
-                </ul>
+    <!-- Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="@Url.Content("~/Content/assets/img/logo/logo.png")" alt="">
+                </div>
             </div>
-            <div class="second_content ">
-                <ul class="bottom_part list-unstyled">
-                    <li>
-                        <button id="categoryTitle">
-                            آرایشی و بهداشتی
-                            <span class="lnr lnr-highlight"></span>
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            مکمل غذایی و کمک درمانی
-                            <span class="lnr lnr-leaf"></span>
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            مکمل ورزشی
-                            <span class="lnr lnr-bicycle"></span>
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            مادر و کودک
-                            <span class="lnr lnr-users"></span>
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            تجهیزات پزشکی
-                            <span class="lnr lnr-heart-pulse"></span>
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            مجله داروکده
-                            <span class="lnr lnr-file-add"></span>
-                        </button>
-                    </li>
-
-                </ul>
-            </div>
-            <hr style="margin-top: 0;">
         </div>
+    </div>
+    <!-- Preloader Start -->
+
+    <header>
+        <!-- Header Start -->
+        <div class="header-area">
+            <div class="main-header ">
+
+                <div class="header-bottom  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-1 col-lg-1 col-md-1 col-sm-3">
+                                <div class="logo">
+                                    <a href="@Url.Content("~/Content/index.html")"><img src="@Url.Content("~/Content/assets/img/logo/logo.png")" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-8 col-md-7 col-sm-5">
+                                <!-- Main-menu -->
+                                <div class="main-menu f-right d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="@Url.Action("Index","Shop")">Home</a></li>
+                                            <li class="hot"><a href="@Url.Content("~/Content/Catagori.html")">Latest</a></li>
+                                            <li><a href="@Url.Action("Product","Shop")">Product</a></li>
+
+                                            <li>
+                                                <a href="#">Category</a>
+                                                <ul class="submenu">
+                                                    <li><a href="@Url.Content("~/Content/product_list.html")"> Product list</a></li>
+                                                    <li><a href="@Url.Content("~/Content/single-product.html")"> Product Details</a></li>
+                                                </ul>
+                                            </li>
+
+
+                                            <li><a href="@Url.Content("~/Content/contact.html")">Contact</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-xl-5 col-lg-3 col-md-3 col-sm-3 fix-card">
+                                <ul class="header-right f-right d-none d-lg-block d-flex justify-content-between">
+                                    <li class="d-none d-xl-block">
+                                        <div class="form-box f-right ">
+                                            <input type="text" name="Search" placeholder="Search products">
+                                            <div class="search-icon">
+                                                <i class="fas fa-search special-tag"></i>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class=" d-none d-xl-block">
+                                        <div class="favorit-items">
+                                            <i class="far fa-heart"></i>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="shopping-card">
+                                            <a href="@Url.Content("~/Content/cart.html")"><i class="fas fa-shopping-cart"></i></a>
+                                        </div>
+                                    </li>
+                                    <li class="d-none d-lg-block"> <a href="@Url.Action("Login", "Shop")" class="btn header-btn">Sign in</a></li>
+                                </ul>
+                            </div>
+                            <!-- Mobile Menu -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
     </header>
 
 
-    <div class="SubTitle" id="firstpart" style="display: none;">
-        <ul class="subTitleName">
-            <li>
-                <a href="#">مراقبت پوستی</a>
-            </li>
-            <li>
-                <a href="#">مراقبت مو</a>
-            </li>
-            <li>
-                <a href="#">بهداشت و سلامت</a>
-            </li>
-            <li>
-                <a href="#">بهداشت دهان و دندان</a>
-            </li>
-            <li>
-                <a href="#">آرایشی</a>
-            </li>
-            <li>
-                <a href="#">مکمل های خوراکی</a>
-            </li>
-            <li>
-                <a href="#"> رفع دغدغه پوستی</a>
-            </li>
-
-        </ul>
-
-
-    </div>
-
-    <div class="subItem" id="secondpart" style="display: none;">
-        <hr>
-        <ul class="subItemName">
-            <li>
-                <ul class="firstsub">
-                    <li>
-                        <a href="#" class="TitleHeader">ضدآفتاب و محصولات مرتبط <bold>|</bold></a>
-                    </li>
-                    <li>
-                        <a href="#" class="sub">اسپری ضدآفتاب بدن</a>
-                    </li>
-                    <li>
-                        <a href="#" class="sub">کرم ضد آفتاب </a>
-                    </li>
-                    <li>
-                        <a href="#" class="sub">ضدآفتاب دور چشم</a>
-                    </li>
-                    <li>
-                        <a href="#" class="sub">برنز کننده</a>
-                    </li>
-                    <li>
-                        <a href="#" class="sub">ضدآفتاب کودک</a>
-                    </li>
-                    <li>
-                        <a href="#" class="sub"> افتر رسان</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <ul class="firstsub">
-                    <li>
-                        <a href="#" class="TitleHeader">ضدآفتاب و محصولات مرتبط <bold>|</bold></a>
-                    </li>
-                    <li>
-                        <a href="#" class="sub">اسپری ضدآفتاب بدن</a>
-                    </li>
-                    <li>
-                        <a href="#" class="sub">کرم ضد آفتاب </a>
-                    </li>
-                    <li>
-                        <a href="#" class="sub">ضدآفتاب دور چشم</a>
-                    </li>
-                    <li>
-                        <a href="#" class="sub">برنز کننده</a>
-                    </li>
-                    <li>
-                        <a href="#" class="sub">ضدآفتاب کودک</a>
-                    </li>
-                    <li>
-                        <a href="#" class="sub"> افتر رسان</a>
-                    </li>
-                </ul>
-            </li>
-
-        </ul>
-    </div>
-
     @RenderBody()
+    <footer>
 
-
-    <footer class="footer">
-        <div class="footer_Container">
-            <div class="Footer_FirstPart">
-                <ul class="About d-flex">
-                    <li>
-                        <img src="@Url.Content("~/Content/images/FooterLogo.svg")" alt="">
-                    </li>
-                    <li>
-                        <p class="AboutParagragh">
-                            داروکده , اولین و بزرگترین داروخانه آنلاین رسمی کشور و جامع ترین پایگاه فروش اینترنتی و
-                            اطلاع رسانی محصولات داروخانه ای است که در آذر ماه سال 1388 تحت امتیاز و مدیریت داروخانه
-                            مرکزی جمالزاده و با نظارت دکتر داروساز به عنوان مسئول فنی و همچنین تیمی متشکل از داروسازان
-                            متخصص و مجرب در گرایشهای فارماکولوژی، فارماکوگنوزی، کارشناسان ارشد تغذیه و پوست و مو تأسیس
-                            شد.
-                            ساعات پاسخگویی : شنبه تا چهارشنبه از 8 تا 19 / پنجشنبه ها از 8 تا 14.
-                            داروخانه آنلاین داروکده در هیچ کجای کشور شعبه و نمایندگی دیگری ندارد.
-                        </p>
-                    </li>
-                    <li>
-                        <h4> همیشه همراه شما هستیم</h4>
-                        <div class="getAccess">
-                            <div class="getAccess_item d-flex ">
-                                <span class="lnr lnr-phone-handset"></span>
-
-                                <p>0909000909</p>
-                            </div>
-                            <div class="getAccess_item d-flex">
-                                <span class="lnr lnr-phone-handset p-15"></span>
-
-                                <p>0909000909</p>
-                            </div>
-                            <div class="getAccess_item d-flex">
-                                <p>kkjkj@gamil.com</p>
-                                <span class="lnr lnr-email"></span>
+        <!-- Footer Start-->
+        <div class="footer-area footer-padding">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="single-footer-caption mb-30">
+                                <!-- logo -->
+                                <div class="footer-logo">
+                                    <a href="@Url.Content("~/Content/index.html")"> 
+                                            <img src="@Url.Content("~/Content/assets/img/logo/logo2_footer.png")" alt=""></a>
+                                </div>
+                                <div class="footer-tittle">
+                                    <div class="footer-pera">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="address d-flex">
-                            <span class="lnr lnr-location"></span>
+                    </div>
+                    <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Quick Links</h4>
+                                <ul>
+                                    <li><a href="#")">About</a></li>
+                                    <li><a href="#")"> Offers & Discounts</a></li>
+                                    <li><a href="#")"> Get Coupon</a></li>
+                                    <li><a href="#")">  Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-7">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>New Products</h4>
+                                <ul>
+                                    <li><a href="#")">Woman Cloth</a></li>
+                                    <li><a href="#")">Fashion Accessories</a></li>
+                                    <li><a href="#")"> Man Accessories</a></li>
+                                    <li><a href="#")"> Rubber made Toys</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-7">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Support</h4>
+                                <ul>
+                                    <li><a href="#")">Frequently Asked Questions</a></li>
+                                    <li><a href="#")">Terms & Conditions</a></li>
+                                    <li><a href="#")">Privacy Policy</a></li>
+                                    <li><a href="#")">Privacy Policy</a></li>
+                                    <li><a href="#")">Report a Payment Issue</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer bottom -->
+                <div class="row">
+                    <div class="col-xl-7 col-lg-7 col-md-7">
+                        <div class="footer-copy-right">
                             <p>
-                                تهران - خیابان جمالزاده شمالی - بالاتر از خیابان فرصت - نبش کوچه یزدان شناس - پلاک 251 -
-                                داروخانه مرکزی جمالزاده
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                             </p>
-
                         </div>
-                    </li>
-                </ul>
-
-            </div>
-            <div class="Footer_SecondPart">
-
-                <div class="Footer_thirdPart">
-
+                    </div>
+                    <div class="col-xl-5 col-lg-5 col-md-5">
+                        <div class="footer-copy-right f-right">
+                            <!-- social -->
+                            <div class="footer-social">
+                                <a href="#")"><i class="fab fa-twitter"></i></a>
+                                <a href="#")"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#")"><i class="fab fa-behance"></i></a>
+                                <a href="#")"><i class="fas fa-globe"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+        <!-- Footer End-->
 
     </footer>
 
+    <!-- JS here -->
+    <!-- All JS Custom Plugins Link Here here -->
+    <script src="@Url.Content("~/Content/assets/js/vendor/modernizr-3.5.0.min.js")"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="@Url.Content("~/Content/assets/js/vendor/jquery-1.12.4.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/popper.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/bootstrap.min.js")"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="@Url.Content("~/Content/assets/js/jquery.slicknav.min.js")"></script>
 
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="@Url.Content("~/Content/assets/js/owl.carousel.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/slick.min.js")"></script>
 
-    <div class="modal" id="loginModal" style="display: none;">
-        <div class="modal_content">
-            <div class="entermodal">
-                <div class="firstpart">
-                    <p> ورود به داروکده </p> <span class="lnr lnr-cross" id="CloseModal"></span>
-                </div>
-                <hr>
-                <div class="seconfpart">
-                    <div class="logomodal">
-                        <img src="@Url.Content("~/Content/images/Logo120248395150.png")">
-                    </div>
-                </div>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="@Url.Content("~/Content/assets/js/wow.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/animated.headline.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/jquery.magnific-popup.js")"></script>
 
+    <!-- Scrollup, nice-select, sticky -->
+    <script src="@Url.Content("~/Content/assets/js/jquery.scrollUp.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/jquery.nice-select.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/jquery.sticky.js")"></script>
 
-                @Html.Partial("_LoginView")
+    <!-- contact js -->
+    <script src="@Url.Content("~/Content/assets/js/contact.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/jquery.form.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/jquery.validate.min.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/mail-script.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/jquery.ajaxchimp.min.js")"></script>
 
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="@Url.Content("~/Content/assets/js/plugins.js")"></script>
+    <script src="@Url.Content("~/Content/assets/js/main.js")"></script>
 
-            </div>
-
-
-        </div>
-
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- Modalssssssss -->
-    <!-- end modalsssss -->
 </body>
-
-<script src="@Url.Content("~/Content/ProductInfo/js/cart.js")"></script>
-<script src="https://cdn.linearicons.com/free/1.0.0/svgembedder.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
-
-
-<script>
-    var btnCategory = document.getElementById("categoryTitle");
-    var F_part = document.getElementById("firstpart");
-    var S_part = document.getElementById("secondpart");
-    var timeClose = 1;
-
-
-    btnCategory.addEventListener("mouseenter", function () {
-        F_part.style.display = "flex";
-        timeClos = 1;
-
-
-    })
-    F_part.addEventListener("mouseover", function (a) {
-        if (timeClose == 1) {
-            F_part.style.display = "flex";
-            F_part.style.boxShadow = "-20px 0 5px #4646468c, 2px 0 5px #4646468c";
-            S_part.style.display = "flex";
-
-        }
-
-
-    })
-
-    S_part.addEventListener("mouseleave", function () {
-
-        S_part.style.display = "none";
-
-
-    })
-    btnCategory.addEventListener("click", function () {
-
-        F_part.style.display = "none";
-        S_part.style.display = "none";
-
-
-    })
-
-</script>
-<script>
-    // Get all elements with class="closebtn"
-    var close = document.getElementsByClassName("closebtn");
-    var i;
-
-    // Loop through all close buttons
-    for (i = 0; i < close.length; i++) {
-        // When someone clicks on a close button
-        close[i].onclick = function () {
-
-            // Get the parent of <span class="closebtn"> (<div class="alert">)
-            var div = this.parentElement;
-
-            // Set the opacity of div to 0 (transparent)
-            div.style.opacity = "0";
-
-            // Hide the div after 600ms (the same amount of milliseconds it takes to fade out)
-            setTimeout(function () { div.style.display = "none"; }, 600);
-        }
-    }
-</script>
 </html>

@@ -24,12 +24,12 @@
 
                                         var base64Image = Convert.ToBase64String(Model.Admin.Image);
                                         var imageSrc = $"data:image/png;base64,{base64Image}";
-                                        <img src="@imageSrc" class="avatar avatar-large rounded-circle shadow d-block mx-auto" alt="Profile Image" />
+                                        <img src="@Url.Content("~/Content/@imageSrc" class="avatar avatar-large rounded-circle shadow d-block mx-auto" alt="Profile Image" />
 
                                     }
                                     else
                                     {
-                                        <img src="@Url.Content("~/Areas/Admin/assets/images/avatars/01.png")" alt="profile-pic" class="theme-color-default-img profile-pic rounded avatar-100">
+                                        <img src="@Url.Content("~/Areas/Admin/assets/images/avatars/01.png")")" alt="profile-pic" class="theme-color-default-img profile-pic rounded avatar-100">
                                     }
                                 }
 
@@ -43,9 +43,9 @@
                             <div class="img-extension mt-3">
                                 <div class="d-inline-block align-items-center">
                                     <span>Only</span>
-                                    <a href="javascript:void();">.jpg</a>
-                                    <a href="javascript:void();">.png</a>
-                                    <a href="javascript:void();">.jpeg</a>
+                                    <a href="@Url.Content("~/Content/javascript:void();">.jpg</a>
+                                    <a href="@Url.Content("~/Content/javascript:void();">.png</a>
+                                    <a href="@Url.Content("~/Content/javascript:void();">.jpeg</a>
                                     <span>allowed</span>
                                 </div>
                             </div>

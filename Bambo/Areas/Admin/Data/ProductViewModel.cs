@@ -10,11 +10,17 @@ namespace Bambo.Areas.Admin.Data
     {
         public Product product { get; set; }
         public List<Product> products { get; set; }
+        public List<Discount> discounts { get; set; }
+        public Discount discount { get; set; }
+
+
+
         public bool IsAvaible { get; set; }
         public bool HasGarantee { get; set; }
 
 
-
+        public int CurrentPage { get; set; }
+        public int TotalPages { get; set; }
 
 
 
@@ -24,8 +30,7 @@ namespace Bambo.Areas.Admin.Data
 
         public List<Brand> brands { get; set; }
         public Brand brand { get; set; }
-        public List<Discount> discounts { get; set; }
-        public Discount discount { get; set; }
+
 
     }
 }

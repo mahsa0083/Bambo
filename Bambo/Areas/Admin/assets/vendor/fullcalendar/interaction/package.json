@@ -26,8 +26,8 @@
   "peerDependencies": {
     "@fullcalendar/core": "~4.3.0"
   },
-  "main": "main.js",
-  "module": "main.esm.js",
-  "unpkg": "main.min.js",
+  "main": "main.js")",
+  "module": "main.esm.js")",
+  "unpkg": "main.min.js")",
   "types": "main.d.ts"
 }

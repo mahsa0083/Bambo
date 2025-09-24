@@ -150,7 +150,7 @@ var TimeGridEventRenderer = /** @class */ (function (_super) {
         }
         return '<a class="' + classes.join(' ') + '"' +
             (eventDef.url ?
-                ' href="' + htmlEscape(eventDef.url) + '"' :
+                ' href="@Url.Content("~/Content/' + htmlEscape(eventDef.url) + '"' :
                 '') +
             (skinCss ?
                 ' style="' + skinCss + '"' :

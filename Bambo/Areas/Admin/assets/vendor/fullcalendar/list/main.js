@@ -104,7 +104,7 @@ Docs & License: https://fullcalendar.io/
                 '></span>' +
                 '</td>' +
                 '<td class="fc-list-item-title ' + theme.getClass('widgetContent') + '">' +
-                '<a' + (url ? ' href="' + core.htmlEscape(url) + '"' : '') + '>' +
+                '<a' + (url ? ' href="@Url.Content("~/Content/' + core.htmlEscape(url) + '"' : '') + '>' +
                 core.htmlEscape(eventDef.title || '') +
                 '</a>' +
                 '</td>' +

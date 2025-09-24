@@ -100,7 +100,7 @@ var ListEventRenderer = /** @class */ (function (_super) {
             '></span>' +
             '</td>' +
             '<td class="fc-list-item-title ' + theme.getClass('widgetContent') + '">' +
-            '<a' + (url ? ' href="' + htmlEscape(url) + '"' : '') + '>' +
+            '<a' + (url ? ' href="@Url.Content("~/Content/' + htmlEscape(url) + '"' : '') + '>' +
             htmlEscape(eventDef.title || '') +
             '</a>' +
             '</td>' +

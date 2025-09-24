@@ -67,7 +67,7 @@ namespace Bambo.Areas.Admin.AdminServices
             {
                 using (var context = new BamboDataBase())
                 {
-                    var model = context.Product.FirstOrDefault(u => u.ProductID == id);
+                    var model = context.Product.Where(u=>u.ProductID==id).FirstOrDefault();
                     return model;
                 }
             }
